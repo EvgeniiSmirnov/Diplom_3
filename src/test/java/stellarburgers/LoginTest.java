@@ -1,13 +1,11 @@
+package stellarburgers;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import jdk.jfr.Description;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import stellarburgers.LoginPage;
-import stellarburgers.MainPage;
-import stellarburgers.PassRecoveryPage;
-import stellarburgers.RegisterPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
@@ -16,7 +14,6 @@ import static org.junit.Assert.assertTrue;
 public class LoginTest {
 
     private static final String BAD_AUTH_MESSAGE = "Ошибка авторизации";
-
     private static final String email = "fatmorty007@gmail.com";
     private static final String password = "123123";
 

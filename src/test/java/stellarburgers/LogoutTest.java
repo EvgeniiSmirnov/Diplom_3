@@ -1,10 +1,9 @@
+package stellarburgers;
+
 import com.codeborne.selenide.Configuration;
 import jdk.jfr.Description;
 import org.junit.Before;
 import org.junit.Test;
-import stellarburgers.AccountPage;
-import stellarburgers.LoginPage;
-import stellarburgers.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
@@ -13,7 +12,6 @@ import static org.junit.Assert.assertTrue;
 public class LogoutTest {
 
     private static final String BAD_LOGOUT_MESSAGE = "Не получилось выйти из личного кабинета";
-
     private static final String email = "fatmorty007@gmail.com";
     private static final String password = "123123";
 

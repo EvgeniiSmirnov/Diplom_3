@@ -1,3 +1,5 @@
+package stellarburgers;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Description;
@@ -5,9 +7,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import stellarburgers.LoginPage;
-import stellarburgers.MainPage;
-import stellarburgers.RegisterPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;

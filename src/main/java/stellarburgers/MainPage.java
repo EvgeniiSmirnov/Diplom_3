@@ -14,34 +14,45 @@ public class MainPage extends HeaderPage {
 
     // кнопка 'Войти в аккаунт'
     @FindBy(how = How.XPATH, using = ".//button[text()='Войти в аккаунт']")
-    public static SelenideElement accountButton;
+    private SelenideElement accountButton;
+
+    // кнопка 'Оформить заказ'
+    @FindBy(how = How.XPATH, using = ".//button[text()='Оформить заказ']")
+    private SelenideElement makeOrderButton;
+
+    // текст в разделе 'Булки'
+    @FindBy(how = How.XPATH, using = ".//span[text()='Булки']")
+    private SelenideElement bunText;
+
+    // раздел 'Булки'
+    @FindBy(how = How.XPATH, using = ".//span[text()='Булки']/..")
+    private SelenideElement bunsTab;
+
+    // текст в разделе 'Соусы'
+    @FindBy(how = How.XPATH, using = ".//span[text()='Соусы']")
+    private SelenideElement sauceText;
+
+    // раздел 'Соусы'
+    @FindBy(how = How.XPATH, using = ".//span[text()='Соусы']/..")
+    private SelenideElement sauceTab;
+
+    // текст в разделе 'Начинки'
+    @FindBy(how = How.XPATH, using = ".//span[text()='Начинки']")
+    private SelenideElement fillingsText;
+
+    // раздел 'Начинки'
+    @FindBy(how = How.XPATH, using = ".//span[text()='Начинки']/..")
+    private SelenideElement fillingsTab;
 
     @Step("Кликаем кнопку 'Войти в аккаунт'")
     public void clickAccountButton() {
         accountButton.click();
     }
 
-    // кнопка 'Оформить заказ'
-    @FindBy(how = How.XPATH, using = ".//button[text()='Оформить заказ']")
-    public static SelenideElement makeOrderButton;
-
     @Step("Проверяем видимость кнопки 'Оформить заказ'")
     public boolean makeOrderButtonCheck() {
         return makeOrderButton.shouldBe(visible).isDisplayed();
     }
-
-    @Step("Кликаем кнопку 'Оформить заказ'")
-    public void clickMakeOrderButton() {
-        makeOrderButton.click();
-    }
-
-    // текст в разделе 'Булки'
-    @FindBy(how = How.XPATH, using = ".//span[text()='Булки']")
-    public static SelenideElement bunText;
-
-    // раздел 'Булки'
-    @FindBy(how = How.XPATH, using = ".//span[text()='Булки']/..")
-    public static SelenideElement bunsTab;
 
     @Step("Кликаем на раздел 'Булки'")
     public void clickBunsTab() {
@@ -53,14 +64,6 @@ public class MainPage extends HeaderPage {
         bunsTab.shouldHave(cssClass("tab_tab_type_current__2BEPc"));
     }
 
-    // текст в разделе 'Соусы'
-    @FindBy(how = How.XPATH, using = ".//span[text()='Соусы']")
-    public static SelenideElement sauceText;
-
-    // раздел 'Соусы'
-    @FindBy(how = How.XPATH, using = ".//span[text()='Соусы']/..")
-    public static SelenideElement sauceTab;
-
     @Step("Кликаем на раздел 'Соусы'")
     public void clickSauceTab() {
         sauceText.click();
@@ -70,14 +73,6 @@ public class MainPage extends HeaderPage {
     public void sauceTabSelectedCheck() {
         sauceTab.shouldHave(cssClass("tab_tab_type_current__2BEPc"));
     }
-
-    // текст в разделе 'Начинки'
-    @FindBy(how = How.XPATH, using = ".//span[text()='Начинки']")
-    public static SelenideElement fillingsText;
-
-    // раздел 'Начинки'
-    @FindBy(how = How.XPATH, using = ".//span[text()='Начинки']/..")
-    public static SelenideElement fillingsTab;
 
     @Step("Кликаем на раздел 'Начинки'")
     public void clickFillingsTab() {

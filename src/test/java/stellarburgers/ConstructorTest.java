@@ -1,8 +1,9 @@
+package stellarburgers;
+
 import com.codeborne.selenide.Selenide;
 import jdk.jfr.Description;
 import org.junit.After;
 import org.junit.Test;
-import stellarburgers.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -17,31 +18,25 @@ public class ConstructorTest {
 
     @Test
     @Description("Позитивная проверка. Проверяем переход к разделу 'Булки'")
-    public void activationBunsTabTest() throws InterruptedException {
+    public void activationBunsTabTest() {
         mainPage.clickFillingsTab();
-        Thread.sleep(3000);
         mainPage.clickBunsTab();
-        Thread.sleep(3000);
         mainPage.bunsTabSelectedCheck();
     }
 
     @Test
     @Description("Позитивная проверка. Проверяем переход к разделу 'Соусы'")
-    public void activationSouseTabTest() throws InterruptedException {
+    public void activationSouseTabTest() {
         mainPage.clickFillingsTab();
-        Thread.sleep(3000);
         mainPage.clickSauceTab();
-        Thread.sleep(3000);
         mainPage.sauceTabSelectedCheck();
     }
 
     @Test
     @Description("Позитивная проверка. Проверяем переход к разделу 'Соусы'")
-    public void activationFillingsTabTest() throws InterruptedException {
+    public void activationFillingsTabTest() {
         mainPage.clickSauceTab();
-        Thread.sleep(3000);
         mainPage.clickFillingsTab();
-        Thread.sleep(3000);
         mainPage.fillingsTabSelectedCheck();
     }
 }

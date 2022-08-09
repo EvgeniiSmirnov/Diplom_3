@@ -1,12 +1,11 @@
+package stellarburgers;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Description;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import stellarburgers.AccountPage;
-import stellarburgers.LoginPage;
-import stellarburgers.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
@@ -16,7 +15,6 @@ public class PersonalAccountTest {
 
     private static final String BAD_AUTH_MESSAGE = "Ошибка авторизации";
     private static final String CONSTRUCTOR_CANT_OPEN_MESSAGE = "Не получилось открыть констрктор";
-
     private static final String email = "fatmorty007@gmail.com";
     private static final String password = "123123";
 

@@ -11,15 +11,23 @@ public class LoginPage extends HeaderPage {
 
     // поле ввода email
     @FindBy(how = How.XPATH, using = ".//input[@name='name']")
-    public static SelenideElement fieldEmail;
+    private SelenideElement fieldEmail;
 
     // поле ввода пароля
     @FindBy(how = How.XPATH, using = ".//input[@name='Пароль']")
-    public static SelenideElement fieldPassword;
+    private SelenideElement fieldPassword;
 
     // кнопка 'Войти'
     @FindBy(how = How.XPATH, using = ".//button[text()='Войти']")
-    public static SelenideElement enterButton;
+    private SelenideElement enterButton;
+
+    // ссылка 'Зарегистрироваться'
+    @FindBy(how = How.XPATH, using = ".//a[text()='Зарегистрироваться']")
+    private SelenideElement registrationLink;
+
+    // ссылка 'Восстановить пароль'
+    @FindBy(how = How.XPATH, using = ".//a[text()='Восстановить пароль']")
+    private SelenideElement passRecoveryLink;
 
     @Step("Проверяем видимость кнопки 'Войти' на странице авторизации")
     public boolean enterButtonCheck() {
@@ -33,18 +41,10 @@ public class LoginPage extends HeaderPage {
         enterButton.click();
     }
 
-    // ссылка 'Зарегистрироваться'
-    @FindBy(how = How.XPATH, using = ".//a[text()='Зарегистрироваться']")
-    public static SelenideElement registrationLink;
-
     @Step("Кликаем ссылку 'Зарегистрироваться' на странице авторизации")
     public void clickRegistrationLink() {
         registrationLink.click();
     }
-
-    // ссылка 'Восстановить пароль'
-    @FindBy(how = How.XPATH, using = ".//a[text()='Восстановить пароль']")
-    public static SelenideElement passRecoveryLink;
 
     @Step("Кликаем ссылку 'Восстановить пароль' на странице авторизации")
     public void clickPassRecoveryLink() {

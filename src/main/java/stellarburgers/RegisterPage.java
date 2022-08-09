@@ -10,15 +10,23 @@ public class RegisterPage extends HeaderPage {
 
     // поля Имя и email
     @FindBy(how = How.XPATH, using = ".//input[@name='name']")
-    public static ElementsCollection nameAndEmailFields;
+    private ElementsCollection nameAndEmailFields;
 
     // поле ввода пароля
     @FindBy(how = How.XPATH, using = ".//input[@name='Пароль']")
-    public static SelenideElement fieldPassword;
+    private SelenideElement fieldPassword;
 
     // кнопка 'Зарегистрироваться'
     @FindBy(how = How.XPATH, using = ".//button[text()='Зарегистрироваться']")
-    public static SelenideElement registrationButton;
+    private SelenideElement registrationButton;
+
+    // уведомление 'Некорректный пароль'
+    @FindBy(how = How.XPATH, using = ".//p[text()='Некорректный пароль']")
+    private SelenideElement errorPasswordNote;
+
+    // кнопка 'Войти'
+    @FindBy(how = How.XPATH, using = ".//a[text()='Войти']")
+    private SelenideElement loginButton;
 
     @Step("Регистрация пользователя")
     public void registration(String name, String email, String password) {
@@ -28,18 +36,10 @@ public class RegisterPage extends HeaderPage {
         registrationButton.click();
     }
 
-    // уведомление 'Некорректный пароль'
-    @FindBy(how = How.XPATH, using = ".//p[text()='Некорректный пароль']")
-    public static SelenideElement errorPasswordNote;
-
     @Step("Проверяем уведомление 'Некорректный пароль'")
     public boolean badPassNoteCheck() {
         return errorPasswordNote.isDisplayed();
     }
-
-    // кнопка 'Войти'
-    @FindBy(how = How.XPATH, using = ".//a[text()='Войти']")
-    public static SelenideElement loginButton;
 
     @Step("Кликаем кнопку 'Войти' на странице регистрации")
     public void clickLoginButton() {

@@ -9,7 +9,7 @@ public class PassRecoveryPage extends HeaderPage {
 
     // ссылка 'Войти'
     @FindBy(how = How.XPATH, using = ".//a[text()='Войти']")
-    public static SelenideElement loginLink;
+    private SelenideElement loginLink;
 
     @Step("Кликаем ссылку 'Войти' на странице восстановления пароля")
     public void clickLoginLink() {

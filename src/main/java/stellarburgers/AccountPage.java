@@ -11,16 +11,16 @@ public class AccountPage extends HeaderPage {
 
     // текст с подсказкой
     @FindBy(how = How.XPATH, using = ".//p[text()='В этом разделе вы можете изменить свои персональные данные']")
-    public static SelenideElement explainText;
+    private SelenideElement explainText;
+
+    // кнопка 'Выход'
+    @FindBy(how = How.XPATH, using = ".//button[text()='Выход']")
+    private SelenideElement exitButton;
 
     @Step("Проверяем видимость подсказки")
     public boolean explainTextCheck() {
         return explainText.shouldBe(visible).isDisplayed();
     }
-
-    // кнопка 'Выход'
-    @FindBy(how = How.XPATH, using = ".//button[text()='Выход']")
-    public static SelenideElement exitButton;
 
     @Step("Кликаем кнопку 'Выход'")
     public void clickExitButton() {
